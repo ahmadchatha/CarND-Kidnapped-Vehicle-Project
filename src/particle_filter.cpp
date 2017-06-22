@@ -28,9 +28,9 @@ void ParticleFilter::init(double x, double y, double theta, double std[]) {
     num_particles = 100;
 
     // normal distribution for x,y, theta
-    normal_distribution<double> N_x(0, std[0]);
-    normal_distribution<double> N_y(0, std[1]);
-    normal_distribution<double> N_theta(0, std[2]);
+    normal_distribution<double> N_x(x, std[0]);
+    normal_distribution<double> N_y(y, std[1]);
+    normal_distribution<double> N_theta(theta, std[2]);
 
     // generating particles
     for (int i = 0; i < num_particles; i++) {
